@@ -1,0 +1,4 @@
+{
+  "jwtSecret": "quizflip_jwt_secret",
+  "jwtExpiration": 3600
+} 
