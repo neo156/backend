@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const path = require('path');
+require('dotenv').config();
 
 // Init Express
 const app = express();
@@ -19,6 +20,11 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/categories', require('./routes/categories'));
 app.use('/api/flashcards', require('./routes/flashcards'));
 app.use('/api/quizzes', require('./routes/quizzes'));
+
+// Basic route for testing
+app.get('/', (req, res) => {
+  res.json({ msg: 'Welcome to QuizFlip API' });
+});
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
